@@ -1,15 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background:  #ffffff;
+  --foreground: #ffffff;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #7D7FF4;
+  --color-grid-white: #FFFFFF;
+  --color-grid-black: #363636;
+  --color-grid-background: #FCFCFC;
+  --color-grid-gray: #696969;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +31,54 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font-family: Roboto;
+}
+
+h2{
+  font-family: Roboto;
+}
+
+h3{
+  font-family: Roboto;
+}
+
+h4{
+  font-family: Roboto;
+}
+
+h5{
+  font-family: Roboto;
+}
+
+h6{
+  font-family: Roboto;
+}
+
+p{
+  font-family: Roboto;
+}
+
+div{
+  font-family: Roboto;
+}
+
+span{
+  font-family: Roboto;
+}
+
+input{
+  font-family: Roboto;
+}
+
+label{
+  font-family: Roboto;
+}
+
+a{
+  font-family: Roboto;
 }
