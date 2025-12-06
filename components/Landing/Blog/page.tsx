@@ -72,7 +72,7 @@ const BlogCard = ({ post }: { post: typeof blogPosts[0] }) => {
 
 const Blog = () => {
     return (
-        <div className="w-screen relative left-1/2 -translate-x-1/2 text-center py-16" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(125, 127, 244, 0.1) 15%, rgba(125, 127, 244, 0.2) 30%, rgba(125, 127, 244, 0.3) 45%, rgba(125, 127, 244, 0.3) 55%, rgba(125, 127, 244, 0.2) 70%, rgba(125, 127, 244, 0.1) 85%, transparent 100%)' }}>
+        <div className="w-screen relative left-1/2 -translate-x-1/2 text-center py-8" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(125, 127, 244, 0.1) 15%, rgba(125, 127, 244, 0.2) 30%, rgba(125, 127, 244, 0.3) 45%, rgba(125, 127, 244, 0.3) 55%, rgba(125, 127, 244, 0.2) 70%, rgba(125, 127, 244, 0.1) 85%, transparent 100%)' }}>
             {/* title text */}
             <div className="max-w-7xl mx-auto px-4">
                 <TitleText title="Blog" text="lorem lorem lorem lorem lorem lorem lorem lorem " />

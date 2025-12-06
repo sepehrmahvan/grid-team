@@ -6,6 +6,8 @@ import Portfolio from './Portfolio/page'
 import PriceList from './PriceList/page'
 import Comments from './Comments/page'
 import Blog from './Blog/page'
+import FAQ from './FAQ/page'
+import Footer from './Footer/page'
 
 const LandingPage = () => {
   return (
@@ -16,6 +18,8 @@ const LandingPage = () => {
         <PriceList />
         <Comments />
         <Blog />
+        <FAQ />
+        <Footer />
     </div>
   )
 }
