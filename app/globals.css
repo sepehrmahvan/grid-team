@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background:  #ffffff;
+  --background:  #FCFCFC;
   --foreground: #ffffff;
 }
 
@@ -17,10 +17,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: #7D7FF4;
+  --color-bg-hover: #3e3f78;
   --color-grid-white: #FFFFFF;
   --color-grid-black: #363636;
-  --color-grid-background: #FCFCFC;
+  --color-grid-background: #F9F8F8;
   --color-grid-gray: #696969;
+  --color-grid-light-gray: #ababab;
+  --animate-service-drop: service-drop 1.2s ease-out forwards;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,8 +34,8 @@
 }
 
 body {
-  background: #ffffff;
-  color: var(--foreground);
+  background: var(--color-grid-background);
+  color: var(--color-grid-black);
 }
 
 h1{
@@ -81,4 +84,52 @@ label{
 
 a{
   font-family: Roboto;
+}
+
+@keyframes service-drop {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-100px) rotate(var(--service-initial-rotation, 0deg));
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+    overflow: visible;
+    transform: translateY(0) rotate(var(--service-rotation, 0deg));
+  }
+}
+
+/* Infinite carousel animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
 }

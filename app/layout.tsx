@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`} cz-shortcut-listen="true">{children}</body>
+      <body className={`antialiased bg-grid-background overflow-x-hidden `} cz-shortcut-listen="true">
+        {children}
+      </body>
     </html>
   );
 }
