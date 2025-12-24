@@ -139,7 +139,7 @@ const OurServices = () => {
             <h3
               className={`${
                 isServiceWhite(index)
-                  ? "bg-transparent text-grid-black border border-grid-black"
+                  ? "bg-transparent text-grid-black border border-grid-blackZZ"
                   : "bg-grid-black text-white"
               } ${
                 hasAnimated ? "animate-service-drop" : ""
