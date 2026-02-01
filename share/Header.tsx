@@ -49,14 +49,14 @@ const Header = ({width}:{width:number}) => {
 
   return (
     <>
-        <div className={`w-[${width}%] mx-auto p-[20px] shadow-sm rounded-[10px] mt-[13px] bg-white/90 backdrop-blur-sm flex justify-between items-center relative`}>
+        <div className={`w-[${width}%] mx-auto px-[20px] rounded-[10px] mt-[18px] bg-transparent backdrop-blur-sm flex justify-between items-center relative`}>
             {/* logo */}
             <div>
                 <Image src="/assets/logo-h.png" alt="grid-team" width={130} height={130} className="max-w-[100px] md:max-w-[130px]" />
             </div>
             
             {/* Desktop navigation */}
-            <div className='hidden md:flex items-center gap-5'>
+            <div className='hidden md:flex items-center gap-5 bg-white py-4 px-6 rounded-full'>
                 {navigation.map((item, index) => (
                     <Link className='tracking-widest text-sm font-medium text-grid-black hover:text-primary transition-colors' href={item.href} key={index}>
                         {item.name}
@@ -64,14 +64,12 @@ const Header = ({width}:{width:number}) => {
                 ))}
             </div>
 
-            {/* Desktop controls */}
+            {/* Desktop controls - Booking Time با بک‌گراند color-grid-black */}
             <div className='hidden md:flex items-center gap-4'>
-                <button className='group relative bg-gradient-to-r from-primary to-primary text-white px-8 py-3 rounded-full cursor-pointer hover:from-primary hover:to-primary hover:shadow-2xl hover:shadow-primary/50 transition-all duration-500 text-sm font-semibold letter-spacing-2 overflow-hidden border-2 border-primary/20 hover:border-primary transform hover:scale-105'>
-                    <span className='relative z-10'>Book Session</span>
+                <button className='group relative bg-grid-black text-grid-white px-8 py-3 rounded-full cursor-pointer hover:bg-grid-black/90 hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 text-sm font-semibold letter-spacing-2 overflow-hidden border-2 border-white/20 hover:border-primary'>
+                    <span className='relative z-10'>Booking Time</span>
                     {/* Glow effect */}
-                    <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-                    {/* Animated border */}
-                    <div className='absolute inset-0 rounded-full border-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse'></div>
+                    <div className='absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                     {/* Shine effect */}
                     <div className='absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-full transition-all duration-700 ease-out'></div>
                 </button>
@@ -131,16 +129,14 @@ const Header = ({width}:{width:number}) => {
                 </nav>
             </div>
 
-            {/* Mobile button - fixed at bottom */}
+            {/* Mobile button - هماهنگ با Booking Time */}
             <div className='p-6 pt-0 border-t border-gray-100'>
                 <button
                     onClick={closeMenu}
-                    className='group relative bg-gradient-to-r from-primary to-primary text-white px-6 py-3 rounded-full cursor-pointer hover:from-primary hover:to-primary hover:shadow-2xl hover:shadow-primary/50 transition-all duration-500 text-sm font-semibold letter-spacing-2 w-full overflow-hidden border-2 border-primary/20 hover:border-primary'
+                    className='group relative bg-grid-black text-grid-white px-6 py-3 rounded-full cursor-pointer hover:bg-grid-black/90 hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 text-sm font-semibold letter-spacing-2 w-full overflow-hidden border-2 border-white/20 hover:border-primary'
                 >
                     <span className='relative z-10'>Book Session</span>
-                    {/* Glow effect */}
-                    <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-                    {/* Shine effect */}
+                    <div className='absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                     <div className='absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-full transition-all duration-700 ease-out'></div>
                 </button>
             </div>

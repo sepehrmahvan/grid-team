@@ -20,7 +20,8 @@
   --color-bg-hover: #3e3f78;
   --color-grid-white: #FFFFFF;
   --color-grid-black: #363636;
-  --color-grid-background: #F9F8F8;
+  --color-grid-background: #E6E6E6;
+  --color-grid-poster-bg: #1A1A1A;
   --color-grid-gray: #696969;
   --color-grid-light-gray: #ababab;
   --animate-service-drop: service-drop 1.2s ease-out forwards;
