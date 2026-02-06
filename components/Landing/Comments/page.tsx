@@ -95,7 +95,7 @@ const CommentCard = ({ comment }: { comment: typeof topRowComments[0] }) => {
 
 const Comments = () => {
     return (
-        <div className='mt-[80px] w-screen relative left-1/2 -translate-x-1/2 overflow-hidden'>
+        <div className='mt-[80px] w-full overflow-hidden'>
             <TitleText title="Customer Opinion" text="lorem lorem lorem lorem lorem lorem lorem" />
             
             {/* Top carousel - scrolling left */}

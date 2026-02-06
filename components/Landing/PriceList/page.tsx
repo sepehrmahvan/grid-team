@@ -7,95 +7,146 @@ import { FaCheck } from 'react-icons/fa'
 const categories = [
     {
         id: 1,
-        name: 'design',
+        name: 'uiux',
+        label: 'Ui/Ux',
     },
     {
         id: 2,
         name: 'wordpress',
+        label: 'Wordpress',
     },
     {
         id: 3,
         name: 'programming',
+        label: 'Programming',
     },
 ]
+
 const priceList = [
+    // UI/UX design plans
     {
         id: 1,
-        category: 'design',
-        type: 'gold',
-        price: 100,
-        title: 'Golden Design',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
-
+        category: 'uiux',
+        type: 'silver',
+        price: 650,
+        title: 'Starter UI Kit',
+        features: [
+            'Up to 5 key screens (web or mobile)',
+            'Brand-aligned colors & typography',
+            'Responsive layout for desktop & mobile',
+            'Delivery in Figma with organized components',
+        ],
     },
     {
         id: 2,
-        category: 'design',
-        type: 'silver',
-        price: 35,
-        title: 'Silver Design',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        category: 'uiux',
+        type: 'gold',
+        price: 1500,
+        title: 'Product UI/UX',
+        features: [
+            'Up to 12 product screens (web or mobile)',
+            'User flow & wireframes before design',
+            'Design system: buttons, forms, states',
+            'Hand-off package for developers',
+        ],
     },
     {
         id: 3,
-        category: 'design',
+        category: 'uiux',
         type: 'basic',
-        price: 10,
-        title: 'Basic Design',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        price: 2800,
+        title: 'SaaS Dashboard Pro',
+        features: [
+            'Complex dashboard with up to 18 screens',
+            'Data visualization & chart components',
+            'Design tokens & full UI library',
+            '2 feedback rounds included',
+        ],
     },
+    // WordPress plans
     {
         id: 4,
         category: 'wordpress',
-        type: 'gold',
-        price: 100,
-        title: 'Golden Wordpress',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        type: 'silver',
+        price: 850,
+        title: 'Starter Website',
+        features: [
+            'Up to 5 pages (Home, About, Services, Blog, Contact)',
+            'Custom Elementor layout (no generic theme)',
+            'Mobile responsive & speed optimized',
+            'Basic on-page SEO setup',
+        ],
     },
     {
         id: 5,
         category: 'wordpress',
-        type: 'silver',
-        price: 35,
-        title: 'Silver Wordpress',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        type: 'gold',
+        price: 2200,
+        title: 'Business Website',
+        features: [
+            'Up to 10 pages with custom sections',
+            'Blog, contact forms & basic integrations',
+            'Conversion-focused landing page',
+            'Training on how to edit your own content',
+        ],
     },
     {
         id: 6,
         category: 'wordpress',
         type: 'basic',
-        price: 10,
-        title: 'Basic Wordpress',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        price: 4200,
+        title: 'E‑commerce Pro',
+        features: [
+            'WooCommerce shop with up to 40 products',
+            'Custom product, cart & checkout templates',
+            'Payment gateway & shipping setup',
+            'Email + WhatsApp support for 30 days',
+        ],
     },
-    {
-        id: 6,
-        category: 'programming',
-        type: 'gold',
-        price: 100,
-        title: 'Golden Programming',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
-    },
+    // Programming / development plans
     {
         id: 7,
         category: 'programming',
         type: 'silver',
-        price: 35,
-        title: 'Silver Programming',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        price: 1200,
+        title: 'Landing Page Build',
+        features: [
+            'Pixel-perfect build from your design',
+            'Next.js + responsive Tailwind layout',
+            'SEO-ready meta tags & Open Graph',
+            'Basic analytics integration',
+        ],
     },
     {
         id: 8,
         category: 'programming',
+        type: 'gold',
+        price: 3800,
+        title: 'Web App MVP',
+        features: [
+            'Auth, dashboard & 2–3 core features',
+            'API integration or simple backend',
+            'Reusable, clean component structure',
+            'Deployed on Vercel or similar hosting',
+        ],
+    },
+    {
+        id: 9,
+        category: 'programming',
         type: 'basic',
-        price: 10,
-        title: 'Basic Programming',
-        features: ['100% Responsive', '100% Customizable', '100% Responsive', '100% Customizable'],
+        price: 8500,
+        title: 'Full Product Build',
+        features: [
+            'Custom web app for your product idea',
+            'Design + frontend + basic backend',
+            'Performance & accessibility best practices',
+            'Support & small iterations for 30 days',
+        ],
     },
 ]
 
 const PriceList = () => {
-    const [activeCategory, setActiveCategory] = useState('design')
+    const [activeCategory, setActiveCategory] = useState('uiux')
 
     const filteredPriceList = priceList
         .filter((item) => item.category === activeCategory)
@@ -105,49 +156,89 @@ const PriceList = () => {
         })
 
     return (
-        <div className="mt-[80px] w-screen relative left-1/2 -translate-x-1/2 text-center" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(125, 127, 244, 0.1) 15%, rgba(125, 127, 244, 0.2) 30%, rgba(125, 127, 244, 0.3) 45%, rgba(125, 127, 244, 0.3) 55%, rgba(125, 127, 244, 0.2) 70%, rgba(125, 127, 244, 0.1) 85%, transparent 100%)' }}>
+        <section className="mt-12 sm:mt-16 md:mt-20 lg:mt-[80px] w-full text-center">
             {/* title text */}
-            <div className="max-w-7xl mx-auto px-4">
-                <TitleText title="Price List" text="lorem lorem lorem lorem lorem lorem lorem lorem " />
+            <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                <TitleText title="Price list" text="Choose a plan that fits your project. We design and build modern brands, websites and digital products." />
             </div>
-            <div className='inline-flex mx-auto p-1 justify-center items-center bg-white rounded-full'>
-                {categories.map((item) => (
-                    <button 
-                        key={item.id} 
-                        onClick={() => setActiveCategory(item.name)}
-                        className={`rounded-full py-4 px-10 cursor-pointer transition-all duration-300 ${
-                            activeCategory === item.name 
-                                ? 'bg-black text-white' 
-                                : 'bg-white hover:bg-primary hover:text-white'
-                        }`}
-                    >
-                        <h3 className='capitalize'>{item.name}</h3>
-                    </button>
-                ))}
+
+            {/* category pills */}
+            <div className="mt-6 sm:mt-8 flex justify-center overflow-x-auto px-4">
+                <div className="inline-flex mx-auto p-1 justify-center items-center bg-white/90 rounded-full shadow-[0_15px_40px_rgba(15,23,42,0.15)] backdrop-blur-sm">
+                    {categories.map((item) => (
+                        <button
+                            key={item.id}
+                            onClick={() => setActiveCategory(item.name)}
+                            className={`rounded-full py-2 sm:py-2.5 md:py-3 px-4 sm:px-6 md:px-8 lg:px-10 cursor-pointer text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap ${
+                                activeCategory === item.name
+                                    ? 'bg-grid-black text-white shadow-[0_15px_40px_rgba(15,23,42,0.45)]'
+                                    : 'text-grid-gray hover:bg-primary hover:text-white'
+                            }`}
+                        >
+                            <h3 className="capitalize">{item.label}</h3>
+                        </button>
+                    ))}
+                </div>
             </div>
-            <div className='bg-transparent flex justify-center items-center gap-10 mt-[40px] items-center w-[86%] mx-auto' >
-                {filteredPriceList.map((item) => (
-                    <div 
-                        key={item.id} 
-                        className={`bg-white rounded-xxl py-4 px-[30px] transition-all duration-300 rounded-2xl shadow-lg w-[25%] ${
-                            item.type === 'gold' ? 'scale-110 z-10 shadow-xl' : ''
-                        }`}
-                    >
-                        <h3 className={`text-xl font-bold mt-4 letter-spacing-2 tracking-wider ${item.type === 'gold' ? 'text-yellow-600' : 'text-gray-400'}`}>{item.title}</h3>
-                        <p className='font-bold text-4xl mt-4 tedxt-grid-black'>{item.price} $</p>
-                        <ul className='flex flex-col text-left gap-4 mt-4'>
-                            {item.features.map((feature, index) => (
-                                <li key={index} className='text-black border-b-1 border-gray-200 pb-2 flex justify-start items-center gap-2'>
-                                    <p><FaCheck className='text-green-600' /></p>
-                                    <p>{feature}</p>
-                                </li>
-                            ))}
-                        </ul>
-                        <button className='bg-transparent border-1 border-black text-black cursor-pointer hover:bg-black hover:text-white transition-all duration-300 rounded-full px-4 py-2 mt-4 w-full' >Order</button>
-                    </div>
-                ))}
+
+            {/* price cards */}
+            <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row justify-center items-stretch gap-4 sm:gap-6 lg:gap-8 w-full sm:w-[90%] md:w-[86%] mx-auto px-4 sm:px-6">
+                {filteredPriceList.map((item) => {
+                    const isFeatured = item.type === 'gold'
+
+                    return (
+                        <div
+                            key={item.id}
+                            className={`relative transition-all duration-300 w-full sm:flex-1 max-w-[320px] sm:max-w-none mx-auto sm:mx-0 rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] ${
+                                isFeatured
+                                    ? 'bg-grid-black text-white sm:scale-105 shadow-[0_30px_80px_rgba(15,23,42,0.5)] py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8'
+                                    : 'bg-white text-grid-black shadow-[0_25px_60px_rgba(15,23,42,0.18)] py-6 sm:py-7 lg:py-8 px-4 sm:px-6 lg:px-7'
+                            }`}
+                        >
+                            {/* header block */}
+                            <div
+                                className={`rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] px-4 sm:px-5 lg:px-6 py-4 sm:py-5 mb-4 sm:mb-5 lg:mb-6 ${
+                                    isFeatured ? 'bg-white text-grid-black' : 'bg-grid-black text-white'
+                                }`}
+                            >
+                                <h3 className="text-base sm:text-lg font-semibold tracking-wide">{item.title}</h3>
+                                <p className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold tracking-wide">
+                                    ${item.price}
+                                </p>
+                            </div>
+
+                            {/* features */}
+                            <ul className="flex flex-col text-left gap-3 sm:gap-4 mt-2">
+                                {item.features.map((feature, index) => (
+                                    <li
+                                        key={index}
+                                        className={`border-b border-gray-200 pb-2 sm:pb-3 flex justify-start items-start gap-2 sm:gap-3 ${
+                                            isFeatured ? 'text-white' : 'text-grid-black'
+                                        }`}
+                                    >
+                                        <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full border border-gray-300 bg-white/80 flex-shrink-0 mt-0.5">
+                                            <FaCheck className="text-green-600 text-xs" />
+                                        </span>
+                                        <p className="text-xs sm:text-sm leading-relaxed">{feature}</p>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* button */}
+                            <button
+                                className={`mt-6 sm:mt-8 w-full rounded-full text-xs sm:text-sm font-semibold py-2.5 sm:py-3 transition-all duration-300 ${
+                                    isFeatured
+                                        ? 'bg-white text-grid-black hover:bg-gray-100'
+                                        : 'bg-grid-black text-white hover:bg-grid-black/90'
+                                }`}
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    )
+                })}
             </div>
-        </div>
+        </section>
     )
 }
 

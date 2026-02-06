@@ -43,36 +43,25 @@ const blogPosts = [
 ]
 
 const BlogCard = ({ post, colorFirst, colorSecond }: BlogCardProps) => {
-    // Define color classes based on props or defaults
-    const getNotchColor = () => {
-        if (colorFirst && colorSecond) {
-            return post === blogPosts[2] || post === blogPosts[3] ? colorFirst : colorSecond;
-        }
-        return post === blogPosts[2] || post === blogPosts[3] ? '#D9D8F7' : '#E5E5F7';
-    };
 
-    const notchColor = getNotchColor();
 
     return (
         <div className="relative rounded-2xl overflow-hidden bg-white">
             {/* Notch cutout at top right */}
             <div
-                className="absolute top-0 right-0 w-16 h-16 rounded-bl-[28px]"
-                style={{ backgroundColor: notchColor }}
+                className="absolute top-0 right-0 w-16 h-16 rounded-bl-[28px] bg-grid-background"
             />
 
             {/* Div attached to left of notch cutout */}
             <div
-                className="absolute top-0 right-16 w-16 h-16 rounded-bl-full "
-                style={{ backgroundColor: notchColor }}
+                className="absolute top-0 right-16 w-16 h-16 rounded-bl-full bg-grid-background "
             >
                 <div className='w-full h-full bg-white rounded-tr-2xl'></div>
             </div>
 
             {/* Div below the notch cutout */}
             <div
-                className="absolute top-16 right-0 w-16 h-16 rounded-bl-full"
-                style={{ backgroundColor: notchColor }}
+                className="absolute top-16 right-0 w-16 h-16 rounded-bl-full bg-grid-background"
             >
                 <div className='w-full h-full bg-white rounded-tr-2xl'></div>
             </div>
