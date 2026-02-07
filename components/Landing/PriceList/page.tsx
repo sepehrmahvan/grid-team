@@ -1,8 +1,8 @@
 'use client'
 
 import TitleText from '@/share/TitleText'
-import React, { useState } from 'react'
-import { FaCheck } from 'react-icons/fa'
+import { useState } from 'react'
+import { GoPlusCircle } from 'react-icons/go'
 
 const categories = [
     {
@@ -212,12 +212,12 @@ const PriceList = () => {
                                 {item.features.map((feature, index) => (
                                     <li
                                         key={index}
-                                        className={`border-b border-gray-200 pb-2 sm:pb-3 flex justify-start items-start gap-2 sm:gap-3 ${
+                                        className={` pb-2 sm:pb-3 flex justify-start items-start gap-2 sm:gap-3 ${
                                             isFeatured ? 'text-white' : 'text-grid-black'
                                         }`}
                                     >
-                                        <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full border border-gray-300 bg-white/80 flex-shrink-0 mt-0.5">
-                                            <FaCheck className="text-green-600 text-xs" />
+                                        <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full flex-shrink-0 mt-0.5 font-bold">
+                                            <GoPlusCircle className="text-lg sm:text-2xl font-bold" />
                                         </span>
                                         <p className="text-xs sm:text-sm leading-relaxed">{feature}</p>
                                     </li>

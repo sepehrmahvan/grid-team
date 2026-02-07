@@ -370,3 +370,31 @@ a{
   background-size: auto, 80px 80px, 80px 80px;
   background-position: center;
 }
+
+/* Portfolio Swiper panorama (coverflow) carousel */
+.portfolio-swiper .swiper-wrapper {
+  align-items: center;
+}
+.portfolio-swiper .swiper-slide {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.portfolio-swiper .portfolio-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(54, 54, 54, 0.35);
+  opacity: 1;
+  transition: transform 0.25s ease, background 0.25s ease, width 0.25s ease;
+  margin: 0 4px;
+}
+.portfolio-swiper .portfolio-bullet-active {
+  background: var(--color-grid-black, #363636);
+  transform: scale(1.2);
+  width: 24px;
+  border-radius: 5px;
+}
+.portfolio-swiper .swiper-slide-shadow-left,
+.portfolio-swiper .swiper-slide-shadow-right,
+.portfolio-swiper .swiper-slide-shadow-top,
+.portfolio-swiper .swiper-slide-shadow-bottom {
+  border-radius: inherit;
+}

@@ -10,7 +10,6 @@ import FAQ from './FAQ/page'
 import Footer from './Footer/page'
 import Poster from './Poster/page'
 import Goal from './Goal/page'
-import TeamMembers from './TeamMembers/page'
 
 const LandingPage = () => {
   return (
@@ -30,7 +29,6 @@ const LandingPage = () => {
             <Portfolio />
             <Goal />
             <OurServices />
-            <TeamMembers />
             <PriceList />
             <Comments />
             <Blog />

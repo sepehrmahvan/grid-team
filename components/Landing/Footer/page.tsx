@@ -19,7 +19,7 @@ const Footer = () => {
         console.log('submitted')
     }
   return (
-    <div className="w-full mx-auto bg-grid-poster-bg p-4 sm:p-6 lg:p-8 mt-8 sm:mt-10">
+    <div className="w-full mx-auto bg-grid-black p-4 sm:p-6 lg:p-8 mt-8 sm:mt-10 rounded-t-[30px] sm:rounded-t-[50px] lg:rounded-t-[70px]">
         <div className='w-full sm:w-[90%] md:w-[86%] mx-auto px-4 sm:px-6'>
             {/* get newsletter section */}
             <div className='flex flex-col lg:flex-row w-full justify-between items-start lg:items-center gap-6 lg:gap-4'>
@@ -32,7 +32,7 @@ const Footer = () => {
                 <div className='flex flex-col gap-2 justify-start items-start text-grid-white w-full lg:w-[45%]'>
                     <p className='text-xs sm:text-sm font-light'>Stay Updated with Us</p>
                     <form onSubmit={handleSubmit} className='relative w-full flex justify-between items-center rounded-full'>
-                        <TextField size='small' sx={{
+                        <TextField size='medium' sx={{
                             '& .MuiInputBase-input': {
                                 padding: '8px 16px',
                                 fontSize: '12px',
@@ -51,9 +51,14 @@ const Footer = () => {
             </div>
             {/* nav links section */}
             <div className='flex flex-col md:flex-row w-full justify-between items-start mt-8 sm:mt-10 gap-6 md:gap-4'>
-                <div className='bg-grid-black p-4 sm:p-5 lg:p-6 rounded-lg w-full md:w-[48%] lg:w-[50%]'>
-                    <img src="/assets/logo-h.png" alt="logo" className='w-32 sm:w-40 md:w-48 lg:w-55 h-auto' />
+                <div className='rounded-lg w-full md:w-[22%] lg:w-[22%]'>
+                    <img src="/assets/logo-h.png" alt="logo" className='w-32 relative -left-5 sm:w-40 md:w-48 lg:w-55 h-auto' />
                     <p className='text-grid-white text-xs sm:text-sm my-3 sm:my-4 leading-relaxed'>We develop innovative digital products, from web applications to mobile apps, helping businesses transform their ideas into scalable solutions.</p>
+                </div>
+                <div className='flex flex-col gap-2 justify-start items-start text-grid-white w-full md:w-[24%] lg:w-[20%]'>
+                    <p className='text-base sm:text-lg font-bold'> Download App </p>
+                    <div className='flex gap-2 justify-start items-center'>Android</div>
+                    <div className='flex gap-2 justify-start items-center'>iOS</div>
                 </div>
                 <div className='flex flex-col gap-2 justify-start items-start text-grid-white w-full md:w-[24%] lg:w-[20%]'>
                     <p className='text-base sm:text-lg font-bold'> Quick Links </p>
@@ -70,7 +75,7 @@ const Footer = () => {
             </div>
             {/* social links section */}
             <div className='flex flex-col sm:flex-row w-full justify-between items-center gap-4 sm:gap-0 mt-8 sm:mt-10'>
-                <p className='text-xs sm:text-sm text-grid-white text-center sm:text-left'>©2025 Gridteam.com. All rights reserved.</p>
+                <p className='text-sm sm:text-xl font-100 text-grid-white text-center sm:text-left'>©2025 Gridteam.com. All rights reserved.</p>
                 <div className='flex gap-3 sm:gap-4 justify-center sm:justify-start items-center'>
                     <Link className='text-2xl sm:text-3xl text-grid-white hover:text-primary transition-colors'  href={contactLinks.linkedin}><FaLinkedinIn /></Link>
                     <Link className='text-2xl sm:text-3xl text-grid-white hover:text-primary transition-colors' href={contactLinks.instagram}><FaInstagram /></Link>

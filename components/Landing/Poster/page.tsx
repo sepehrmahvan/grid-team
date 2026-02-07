@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 const Poster = () => {
   const [mounted, setMounted] = useState(false);
@@ -56,10 +57,10 @@ const Poster = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-screen h-[500px] md:h-screen sm:h-auto sm:min-h-[90vh] lg:h-screen overflow-hidden bg-grid-poster-bg rounded-b-[30px] sm:rounded-b-[50px] lg:rounded-b-[70px]">
+    <section className="relative w-full min-h-[500px] md:min-h-screen h-[500px] md:h-screen sm:h-auto sm:min-h-[90vh] lg:h-screen overflow-hidden bg-grid-poster-bg">
       {/* poster content */}
       <div
-        className="mt-16 sm:mt-20 md:mt-24 lg:mt-[100px] flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-6 lg:gap-0 px-4 sm:px-6 md:px-8 lg:p-0 w-full lg:w-[86%] mx-auto"
+        className="mt-16 sm:mt-20 md:mt-24 lg:mt-[100px] xl:mt-[140px] flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-6 lg:gap-0 px-4 sm:px-6 md:px-8 lg:p-0 w-full lg:w-[86%] mx-auto"
         onMouseMove={handleMouseMove}
       >
         {/* left side */}
@@ -132,23 +133,28 @@ const Poster = () => {
         />
       </div>
       {/* our customers logos */}
-      <div className="bg-gradient-to-r from-grid-black via-grid-black/95 to-grid-black absolute bottom-0 z-50 w-full overflow-hidden">
-        <div className="flex items-center gap-8 sm:gap-12 md:gap-16 py-3 sm:py-4 animate-scroll-left carousel-track">
+      <div className="bg-gradient-to-r py-2 from-grid-black via-grid-black/95 to-grid-black absolute bottom-0 z-50 w-full overflow-hidden">
+        <Marquee
+          speed={40}
+          direction="left"
+          pauseOnHover
+          className="py-3 sm:py-4"
+        >
           {[...customersLogos, ...customersLogos].map((logo, index) => (
             <img
               key={`${logo.id}-${index}`}
               src={logo.logo}
               alt="customer-logo"
-              className="w-[12%] sm:w-[10%] md:w-[8%] min-w-[60px] sm:min-w-[80px] opacity-70 hover:opacity-100 transition-opacity duration-300 drop-shadow-glow"
+              className="w-[70px] sm:w-[90px] md:w-[110px] h-auto mx-6 sm:mx-8 md:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300 drop-shadow-glow flex-shrink-0"
             />
           ))}
-        </div>
+        </Marquee>
       </div>
       {/* people loved it */}
       <img
         src="/assets/people-loved-it.png"
         alt="liked"
-        className="absolute right-4 sm:right-8 md:right-12 lg:right-[140px] top-[25%] sm:top-[30%] lg:top-[35%] z-50 w-32 sm:w-40 md:w-48 lg:w-60 animate-drift hidden sm:block"
+        className="absolute right-4 sm:right-8 md:right-12 lg:right-[70px] top-[25%] sm:top-[30%] lg:top-[55%] z-50 w-32 sm:w-40 md:w-48 lg:w-60 animate-drift hidden sm:block"
         style={parallaxStyle(4)}
       />
     </section>
